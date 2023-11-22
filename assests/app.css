@@ -170,6 +170,7 @@ summary::-webkit-details-marker {
     width: 100%;
     margin-top: 5vh;
     height: auto;
+    padding-bottom: 10px;
     background: white; box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05); border: 1px #DBDBDB solid;
 }
 .first-area{
@@ -248,17 +249,69 @@ summary::-webkit-details-marker {
     width: 90%;
     margin: 0 auto;
     height: auto;
-    padding: 8px;
+    padding: 10px 8px;
     border-radius: 10px;
     display: flex;
     justify-content:space-between;
 }
-.check-box input[type=checkbox]{
+.checkbox{
     width: 24px;
     height: 24px;
-    border-radius: 9999px;
+    border-radius: 50%;
     outline: none;
-    border: 2.08px #8A8A8A dotted;
+    border: 2.08px #8A8A8A dashed;
+    transition: 0.4s;
+}
+.step-1 .text{
+    width: 88%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.step-1 .text h1{
+    color: #303030;
+    font-size: 13px;
+    font-family: Inter;
+    font-weight: 600;
+    line-height: 18.20px;
+    word-wrap: break-word
+}
+.step-1 .text p{
+    color: #616161;
+    font-size: 13px;
+    font-family: Inter;
+    font-weight: 500;
+    line-height: 18.20px;
+    word-wrap: break-word
+}
+.step-1 .text p a{
+    color: #005BD3;
+    font-size: 14px;
+    font-family: Inter;
+    text-decoration: none;
+    line-height: 19.60px;
+}
+.step-1 .text button{
+    width: 127px;
+    height: 28px;
+    background: #404040;
+     box-shadow: 0px 0px 0px 1.5px #333333; 
+     border-radius: 6px; overflow: hidden;
+      border-left: 1.50px rgba(255, 255, 255, 0.20) solid; border-top: 1.50px rgba(255, 255, 255, 0.20) solid; border-right: 1.50px rgba(255, 255, 255, 0.20) solid; justify-content: flex-start; 
+      align-items: center;
+       gap: 8px;
+        display: inline-flex;
+        color: #F6F3F6;
+        font-size: 12px;
+        font-family: Inter;
+        font-weight: 600;
+        line-height: 15.60px;
+        word-wrap: break-word
+}
+.checkbox:hover{
+border-style: solid;
+
 }
 /* .arrow:active{
     background: #F0F0F0;
@@ -294,7 +347,7 @@ summary::-webkit-details-marker {
     }
     .profile{
         height: 100%;
-        width: 60%;
+        width: 40%;
         border-radius: 8px;
         background: #303030;
         display: flex ;
