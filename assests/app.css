@@ -2,6 +2,7 @@
 
 body{
     margin: 0;
+    background: #F1F1F1"
 }
 /* ==========================   NAVBAR =============== */
 nav{
@@ -10,6 +11,9 @@ nav{
     background: #303030;
     display: flex;
     align-items: center;
+}
+.profile h1{
+    display: none;
 }
 .nav-items{
     width: 90%;
@@ -22,6 +26,12 @@ nav{
 .logo{
     width: 10%;
     /* border: 1px solid red; */
+}
+.logo .mobile{
+    display: block;
+}
+.logo .desktop{
+    display: none;
 }
 
 form{
@@ -55,6 +65,8 @@ form input{
 form input::placeholder{
     color: #B5B5B5;
     font-size: 13px;
+    display: flex;
+    align-items: center;
     font-family: Inter;
     font-weight: 500;
     line-height: 18.20px;
@@ -67,14 +79,14 @@ form svg{
 }
 
 .items{
-    width: 20%;
+    width: 22%;
     height: 80%;
     display: flex;
     gap: 10px;
     align-items: center;
 }
 .items svg{
-    width: 30%;
+    width: 40%;
 }
 .profile{
     height: 100%;
@@ -93,34 +105,280 @@ font-weight: 500;
 line-height: 15.60px;
 word-wrap: break-word;
 }
-/* ==========================   NAVBAR =============== */
+
+/* ========================== INFO BOX =============== */
+.info-box{
+    margin-top: 28px;
+    height: 134px;
+    width: 100%;
+    background: #1A1A1A;
+    display: flex;
+    flex-wrap: wrap;
+}
+.info-text{
+    width: 90%;
+    padding-top: 10px;
+    margin: 0 auto;
+    display: flex;
+
+}
+.info-text p{
+    color: #E3E3E3;
+font-size: 13px;
+font-family: Inter;
+font-weight: 500;
+line-height: 18.20px;
+word-wrap: break-word
+}
+.info-btn{
+    width: 90%;
+    margin: 0 auto;
+  
+}
+.info-btn button{
+    width: 120px;
+    height: 30px;
+    background: white; 
+    box-shadow: 0px -1px 0px #B5B5B5 inset;
+     border-radius: 6px;
+      overflow: hidden;
+       border: 1px rgba(0, 0, 0, 0.10) solid; 
+    color: #323232;
+    font-size: 12px;
+    font-family: Inter;
+    font-weight: 600;
+    line-height: 15.60px;
+    word-wrap: break-word;
+    padding: 6px 12px;
+}
+/*======== SETUP GUIDE AREA ========*/
+.setup{
+    width: 100%;
+    height: auto;
+}
+summary {
+    list-style: none;
+}
+
+/* Remove the default list marker for the summary element */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Additional styling if needed */
+.first-dropdown{
+    width: 100%;
+    margin-top: 5vh;
+    height: auto;
+    background: white; box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05); border: 1px #DBDBDB solid;
+}
+.first-area{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+.first-area .texts h1{
+    color: #303030;
+    font-size: 14px;
+    font-family: Inter;
+    font-weight: 600;
+    line-height: 19.60px;
+    word-wrap: break-word
+}
+.first-area .texts p{
+    color: #303030;
+    font-size: 13px;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 18.20px;
+    word-wrap: break-word;
+}
+.progress-bar-sec{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.progress-bar-sec p{
+    color: #303030;
+    font-size: 12px;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 15.60px;
+    word-wrap: break-word; 
+}
+.progress-bar{
+    width: 100px;
+    height: 4px;
+    border-radius: 28px;
+    background:#E3E3E3 ;
+}
+.progress-bar::after{
+    content: '';
+    display: block;
+    width: 25px;
+    transition: 0.3s;
+    height: 4px;
+    border-top-left-radius: 28px;
+    border-bottom-left-radius: 28px;
+    background: #1A1A1A;
+}
+.arrow{
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.arrow.active{
+    transform: rotate(180deg);
+    border: 2px #005BD3 solid;   
+    background: #F0F0F0;
+}
+.arrow:hover{
+    background: #F0F0F0;
+}
+.step-1{
+    background: #F3F3F3;
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
+    padding: 8px;
+    border-radius: 10px;
+    display: flex;
+    justify-content:space-between;
+}
+.check-box input[type=checkbox]{
+    width: 24px;
+    height: 24px;
+    border-radius: 9999px;
+    outline: none;
+    border: 2.08px #8A8A8A dotted;
+}
+/* .arrow:active{
+    background: #F0F0F0;
+    border: 2px #005BD3 solid;
+} */
 @media screen and (min-width:1000px) {
     /* ==========================   NAVBAR =============== */
     .nav-items{
-        width: 80%;
+        width: 98%;
+    }
+    nav{
+        background: #1A1A1A;
     }
     form{
-        width: 40%;
+        width: 30%;
+    }
+    form input{
+        width: 90%;
     }
     .logo{
         width: 30%;
         /* border: 1px solid red; */
     }
+    .logo .mobile{
+        display: none;
+    }
+    .logo .desktop{
+        display: block;
+    }
     .items{
         width: 30%;
         justify-content: end;
-        border: 1px solid red;
-    }
-    .items svg{
-        width: 20%;
     }
     .profile{
         height: 100%;
         width: 60%;
         border-radius: 8px;
-        background: #00000066;
+        background: #303030;
+        display: flex ;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        cursor: pointer;
+    }
+    .profile:hover{
+        background-color: #616161;
+    }
+    .profile:active{
+        box-shadow: 0px 0px 0px 3px #005BD3;
     }
     .profile p{
+        width: 28px;
+        background: #36FBA1;
+        padding: 1px 2px;
+        border-radius: 8px;
+        height: 28px;
+        display: flex ;
+        align-items: center;
+        justify-content: center;
         font-size: 15px;
+        margin-right: 5px;
+        cursor: pointer;
+    }
+    .profile h1{
+        display: block;
+        color: #E3E3E3;
+        font-size: 12px;
+        font-family: Inter;
+        font-weight: 500;
+        line-height: 15.60px;
+        padding-left: 10px;
+        word-wrap: break-word;
+        cursor: pointer;
+    }
+    form svg{
+        width: 3%;
+        margin-left: 10px;
+    }
+    form input::placeholder{
+        font-size: 15px;
+    }
+    .items svg{
+        width: 5%;
+        background:#303030 ;
+        height: 100%;
+        padding: 0 8px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    .items svg:hover{
+        background-color: #616161;
+    }
+    .items svg:active{
+        box-shadow: 0px 0px 0px 3px #005BD3;
+    }
+    main{
+        width: 60%;
+        margin: 0 auto;
+    }
+    .info-text
+    {
+       justify-content: space-between;
+       width: 80%;
+       margin: 0;
+    }
+    .info-text p{
+        margin-left: 10px;
+    }
+    .info-box{
+        align-items: center;
+        height: 56px;
+        border-radius: 8px;
+
+    }
+    .info-btn{
+        /* border: 1px solid red; */
+        width: 10%;
+    }
+    .first-dropdown{
+        height: auto;
+        border-radius: 18px; border: 1px #DBDBDB solid; 
     }
 }
