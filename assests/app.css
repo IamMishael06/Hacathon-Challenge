@@ -105,16 +105,217 @@ font-weight: 500;
 line-height: 15.60px;
 word-wrap: break-word;
 }
+/* ========================== PROFILE DROPDOWN =============== */
+.profile-dropdown{
+ 
+    width: 90%;
+    height: 384px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); 
+    border-radius: 14px; 
+    border: 1px #DBDBDB solid;
+    position: absolute;
+    background: white;
+    right: 2.5%;
+    top: 10%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0px;
+    padding: 10px 5px 50px 10px;
+    align-content: flex-start;
+    display: none;
+}
+.profile-dropdown.active{
+    display: block;
+}
+.first-sec{
+    width: 95%;
+}
+.user{
+    width: 100%;
+    height: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F1F1F1; border-radius: 8px;
+}
+.user-profile{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 5px;
+}
+.user-profile p{
+    padding: 5px;
+     background: #36FBA1;
+     border-radius: 5.25px;
+      overflow: hidden;
+       justify-content: center;
+        align-items: center;
+     display: inline-flex;
+     color: rgba(0, 0, 0, 0.40);
+     font-size: 10.50px;
+     font-family: Inter;
+     font-weight: 500;
+     line-height: 14.70px;
+     word-wrap: break-word
+}
+.user-profile h6{
+    color: #303030;
+    font-size: 13px;
+    font-family: Inter;
+    font-weight: 600;
+    line-height: 18.20px;
+    word-wrap: break-word;
+}
+.check{
+    margin-right: 5px;
+}
+.store {
+    width: 95%;
+    display: flex;
+    gap: 8px;
+    height: 20px;
+    margin-top: 4px;
+    padding: 4px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.store p{
+    color: #303030;
+    font-size: 13px;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 18.20px;
+    word-wrap: break-word
+}
+.profile-dropdown hr{
+    width: 100%;
+    border: .75px solid #E1E1E1;
+}
+.second-sec{
+    display: flex;
+    width: 95%;
+    flex-direction: column;
+    gap: 10px;
+}
+.second-sec li{
+    list-style: none;
+    text-align: left;
+    padding: 4px;
+    height: 20px;
+}
+
+.second-sec li a{
+    text-decoration: none;
+    color: #303030;
+    font-size: 13px;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 18.20px;
+    word-wrap: break-word;
+}
+.third-sec{
+    width: 95%;
+    flex-direction: column;
+    gap: 10px;
+    display: flex;
+}
+.more-user-info h2{
+    color: #303030;
+    font-size: 13px;
+    font-family: Inter;
+    font-weight: 500;
+    line-height: 13.20px;
+    word-wrap: break-word;
+}
+.more-user-info p{
+    color: #616161;
+    font-size: 12px;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 0px;
+    word-wrap: break-word;
+}
+.third-sec a{
+    color: #303030;
+    font-size: 13px;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: 18.20px;
+    word-wrap: break-word;
+    text-decoration: none;
+}
+.third-sec li{
+    list-style: none;
+    padding: 4px;
+    height: 20px;
+}
+.third-sec li:hover{
+    background:#F1F1F1 ;
+    width: 98%;
+    border-radius: 5px;
+}
 /* ========================== ALERT POPUP =============== */
 .alert-popup{
-    width: 80%;
+    width: 90%;
     position: absolute;
     height: 136px;
-    top: 20%;
+    top: 22%;
     background: white;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
     border-radius: 14px; 
     border: 1px #DBDBDB solid;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+.alert-popup.active{
+    display: block;
+}
+.alert-popup-info{
+    width: 90%;
+    margin: 0 auto;
+
+}
+.alert-popup-info .texts{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.alert-popup-info .texts h1{
+    color: #303030;
+    font-size: 14px;
+    font-family: Inter;
+    font-weight: 600;
+    line-height: 19.60px;
+    word-wrap: break-word;
+}
+.icon-area{
+
+}
+.alert-msg{
+    background: #F1F1F1;
+    height: 50%;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.alert-msg p{
+    color: #303030;
+    font-size: 13px;
+    font-family: Inter;
+    font-weight: 600;
+    line-height: 18.20px;
+    word-wrap: break-word;
+    text-align: center;
 }
 /* ========================== INFO BOX =============== */
 .info-box{
@@ -465,4 +666,35 @@ border-style: solid;
     .step-1 .text{
         width: 50%;
     }
+    /* ========================== ALERT POPUP =============== */
+.alert-popup{
+    width: 30%;
+    left: 68%;
+    top: 8%;
+    transform: none;
+}
+.alert-msg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+/* ========================== PROFILE DROPDOWN =============== */
+.profile-dropdown{
+    width: 20%;
+    right: 1%;
+    top: 8%;
+}
+.second-sec li:hover{
+    background:#F1F1F1 ;
+    width: 98%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.store:hover{
+    background:#F1F1F1 ;
+    width: 98%;
+    border-radius: 5px;
+    cursor: pointer;
+}
 }

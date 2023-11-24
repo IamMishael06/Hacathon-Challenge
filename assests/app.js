@@ -40,5 +40,29 @@ checkBox.forEach( checkBoxes => {
     
 });
 
+function showAlert() {
+    var alertMsg = document.querySelector('.alert-popup')
+    alertMsg.classList.toggle('active')
+
+}
 
 
+// function showAlert() {
+//     var alertMsg = document.querySelector('.alert-popup')
+  
+//     document.body.addEventListener("click", (event)=>{
+//         if (event.target.classList.contains('alert-popup')) {
+//             alertMsg.classList.toggle('active')
+//         }
+//         else{
+//             alertMsg.classList.remove('active')
+//         }
+        
+//     })
+// }
+// showAlert()
+
+function removeDropdown() {
+    var dropdown = document.querySelector('.profile-dropdown')
+    dropdown.classList.toggle('active')
+}
