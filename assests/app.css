@@ -468,7 +468,29 @@ summary::-webkit-details-marker {
     display: flex;
     justify-content:space-between;
 }
+.shorten-form{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    display: none;
+}
+.shorten-form p{
+    color: #303030;
+    font-size: 13px;
+    font-family: Inter;
+    font-weight: 500;
+    line-height: 18.20px;
+    word-wrap: break-word;
+}
+/* ==checkbox== */
+.check-box{
+    position: relative;
+}
 .checkbox{
+    position: relative;
+    z-index: 99;
     width: 24px;
     height: 24px;
     border-radius: 50%;
@@ -476,6 +498,66 @@ summary::-webkit-details-marker {
     margin-top: 2px;
     border: 2.08px #8A8A8A dashed;
     transition: 0.4s;
+}
+.checkbox:hover{
+    border-style: solid !important;
+}
+.checkbox.active{
+    opacity: 0;
+    transition-delay: 0.4s;
+}
+.checked{
+    display: none;
+    position: absolute;
+    top: 0;
+    margin-top: 2px;
+    opacity: 0;
+    animation-name: check;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-delay: 1.2s;
+    animation-iteration-count: 1;
+    transform: rotate(-45deg);
+    animation-fill-mode: forwards;
+}
+.checked.active{
+    display: block;
+}
+@keyframes check {
+    0%{
+        opacity: 0.6;
+        transform: rotate(-45deg);
+    }
+    100%{
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+}
+
+.rolling-animation{
+    display: none;
+    position: absolute;
+    top: 0;
+    margin-top: 2px;
+    opacity: 0;
+    animation: circle 1s linear 0.4s 1 ;
+}
+.rolling-animation.active{
+    display:block;
+}
+@keyframes circle {
+    0%{
+        opacity: 0;
+        transform: rotate(2deg);
+    }
+    50%{
+        opacity: 1;
+        transform: rotate(270deg);
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(360deg);
+    }
 }
 .step-1 .text{
     width: 88%;
@@ -524,9 +606,7 @@ summary::-webkit-details-marker {
         line-height: 15.60px;
         word-wrap: break-word
 }
-.checkbox:hover{
-border-style: solid;
-}
+
 .step-img{
     display: none;
 }
@@ -624,6 +704,7 @@ border-style: solid;
     .items svg:active{
         box-shadow: 0px 0px 0px 3px #005BD3;
     }
+    /* ========================== STEP GUIDE =============== */
     main{
         width: 60%;
         margin: 0 auto;
