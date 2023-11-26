@@ -10,6 +10,21 @@ function Focus(e) {
 
 
 }
+var step = document.querySelector('.step-1')
+step.addEventListener('click', function(e) {
+    // let text = document.querySelector('.step-1 .text');
+    let pTag = document.querySelector('.step-1 .text p');
+    let buttonTag = document.querySelector(' .step-1 .text button');
+    let imgTag = document.querySelector('.step-img');
+
+    step.classList.toggle('active')
+    pTag.classList.toggle('active')
+    buttonTag.classList.toggle('active')
+    imgTag.classList.toggle('active')
+
+
+});
+
 
 var counter = document.querySelector('.counter')
 var checkBox = document.querySelectorAll('.check-box')
@@ -27,14 +42,14 @@ checkBox.forEach( checkBoxes => {
         if (!hasBeenClicked) {
             if (number < 5) {
                 number = number + 1
-                checkBoxIcon.forEach(checkBoxIcons => {
+                checkBoxIcon.forEach((checkBoxIcons, index) => {
                     checkBoxIcons.classList.add('active')
                 });
-                checked.forEach(checkeded => {
+                checked.forEach((checkeded, index) => {
                     checkeded.classList.add('active')
                 });
-                rollingAnimation.forEach(rollingAnimations => {
-                    rollingAnimations.classList.toggle('active')
+                rollingAnimation.forEach((rollingAnimations, index) => {
+                    rollingAnimations.classList.add('active')
                 });
                
                
@@ -46,10 +61,13 @@ checkBox.forEach( checkBoxes => {
             if (number < 5) {
                 number = number - 1
             }
-            checkBoxIcon.forEach(checkBoxIcons => {
+            rollingAnimation.forEach((rollingAnimations, index) => {
+                rollingAnimations.classList.toggle('active')
+            });
+            checkBoxIcon.forEach((checkBoxIcons, index) => {
                 checkBoxIcons.classList.remove('active')
             });
-            checked.forEach(checkeded => {
+            checked.forEach((checkeded, index) => {
                 checkeded.classList.remove('active')
             });
             counter.textContent = number
@@ -63,6 +81,7 @@ checkBox.forEach( checkBoxes => {
     })
     
 });
+
 
 function showAlert() {
     var alertMsg = document.querySelector('.alert-popup')

@@ -459,14 +459,26 @@ summary::-webkit-details-marker {
     background: #F0F0F0;
 }
 .step-1{
-    background: #F3F3F3;
+    
+    /* background: #F3F3F3; */
     width: 90%;
     margin: 0 auto;
-    height: auto;
-    padding: 10px 8px;
+    height: 10px;
+    padding: 20px 8px;
     border-radius: 10px;
     display: flex;
     justify-content:space-between;
+}
+.step-1.active{
+    height: auto;
+    background:#F3F3F3 ;
+}
+
+.step-1 .text p.active{
+    display: block;
+}
+.step-1 .text button.active{
+    display:block !important;
 }
 .shorten-form{
     display: flex;
@@ -515,7 +527,7 @@ summary::-webkit-details-marker {
     animation-name: check;
     animation-duration: 0.3s;
     animation-timing-function: linear;
-    animation-delay: 1.2s;
+    animation-delay: 1.0s;
     animation-iteration-count: 1;
     transform: rotate(-45deg);
     animation-fill-mode: forwards;
@@ -560,11 +572,13 @@ summary::-webkit-details-marker {
     }
 }
 .step-1 .text{
+
     width: 88%;
     height: 100%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+
 }
 .step-1 .text h1{
     color: #303030;
@@ -580,8 +594,10 @@ summary::-webkit-details-marker {
     font-family: Inter;
     font-weight: 500;
     line-height: 18.20px;
-    word-wrap: break-word
+    word-wrap: break-word;
+    display: none;
 }
+
 .step-1 .text p a{
     color: #005BD3;
     font-size: 14px;
@@ -590,6 +606,7 @@ summary::-webkit-details-marker {
     line-height: 19.60px;
 }
 .step-1 .text button{
+    display: none !important;
     width: 127px;
     height: 28px;
     background: #404040;
@@ -736,7 +753,7 @@ summary::-webkit-details-marker {
         border-radius: 18px; border: 1px #DBDBDB solid; 
     }
     .step-img{
-        display: block;
+        display: none;
         margin-left: auto;
     }
     .step-1{
@@ -746,6 +763,9 @@ summary::-webkit-details-marker {
     }
     .step-1 .text{
         width: 50%;
+    }
+    .step-img.active{
+        display: block;
     }
     /* ========================== ALERT POPUP =============== */
 .alert-popup{
