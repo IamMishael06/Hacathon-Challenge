@@ -1,7 +1,10 @@
+// ================================ INFO BOX ===================================//
 function Remove() {
     var box = document.querySelector('.info-box')
     box.style.display = "none"
 }
+
+// ============================= SETUP GUIDE ARROW ============================//
 function Focus(e) {
     var arrow = document.querySelector('.arrow')
 
@@ -10,50 +13,48 @@ function Focus(e) {
 
 
 }
-var step = document.querySelector('.step-1')
-step.addEventListener('click', function(e) {
-    // let text = document.querySelector('.step-1 .text');
-    let pTag = document.querySelector('.step-1 .text p');
-    let buttonTag = document.querySelector(' .step-1 .text button');
-    let imgTag = document.querySelector('.step-img');
 
-    step.classList.toggle('active')
-    pTag.classList.toggle('active')
-    buttonTag.classList.toggle('active')
-    imgTag.classList.toggle('active')
-
-
+// ================================ STEPS DROPDOWN============================== //
+var step = document.querySelectorAll('.step-1')
+step.forEach(steps => {
+    steps.addEventListener('click', function(e) {
+        console.log(steps)
+        let imgTag = steps.querySelector('.step-img');
+        var event = e.target
+        // let text = document.querySelector('.step-1 .text');
+        // let pTag = document.querySelector('.step-1 .text p');
+        // let buttonTag = document.querySelector(' .step-1 .text button');
+        if (!event.classList.contains('check-box') && !event.closest('.check-box')) {
+                steps.classList.toggle('active');
+                imgTag.classList.toggle('active');
+        }
+    });
 });
 
-
+// =============================== CHECKED ANIMATION ==============================//
 var counter = document.querySelector('.counter')
 var checkBox = document.querySelectorAll('.check-box')
-var checkBoxIcon = document.querySelectorAll('.checkbox')
-var checked = document.querySelectorAll('.checked')
+
 var number = 0;
 counter.textContent = number
 var hasBeenClicked = false;
-checkBox.forEach( checkBoxes => {
+checkBox.forEach( (checkBoxes, index) => {
+
     checkBoxes.addEventListener("click", (event)=>{
+        var checked = checkBoxes.querySelector('.checked')
+        var rollingAnimation = checkBoxes.querySelector('.rolling-animation')
+        var checkBoxIcon = checkBoxes.querySelector('.checkbox')
+        console.log(checkBoxes)
         var bar = document.querySelector('.progress-bar')
-        var rollingAnimation = document.querySelectorAll('.rolling-animation')
+
         counter.textContent = number
         bar.style.setProperty('--width', '25px');
         if (!hasBeenClicked) {
             if (number < 5) {
                 number = number + 1
-                checkBoxIcon.forEach((checkBoxIcons, index) => {
-                    checkBoxIcons.classList.add('active')
-                });
-                checked.forEach((checkeded, index) => {
-                    checkeded.classList.add('active')
-                });
-                rollingAnimation.forEach((rollingAnimations, index) => {
-                    rollingAnimations.classList.add('active')
-                });
-               
-               
-                
+                checkBoxIcon.classList.add('active')
+                checked.classList.add('active')
+                rollingAnimation.classList.add('active')
             }
             counter.textContent = number
             // hasBeenClicked = true;
@@ -61,15 +62,10 @@ checkBox.forEach( checkBoxes => {
             if (number < 5) {
                 number = number - 1
             }
-            rollingAnimation.forEach((rollingAnimations, index) => {
-                rollingAnimations.classList.toggle('active')
-            });
-            checkBoxIcon.forEach((checkBoxIcons, index) => {
-                checkBoxIcons.classList.remove('active')
-            });
-            checked.forEach((checkeded, index) => {
-                checkeded.classList.remove('active')
-            });
+                rollingAnimation.classList.toggle('active')
+                checkBoxIcon.classList.remove('active')
+                checked.classList.remove('active')
+
             counter.textContent = number
             bar.style.setProperty('--width', '0px');
             
@@ -82,29 +78,14 @@ checkBox.forEach( checkBoxes => {
     
 });
 
-
+// =============================== ALERT POPUP ==============================//
 function showAlert() {
     var alertMsg = document.querySelector('.alert-popup')
     alertMsg.classList.toggle('active')
 
 }
 
-
-// function showAlert() {
-//     var alertMsg = document.querySelector('.alert-popup')
-  
-//     document.body.addEventListener("click", (event)=>{
-//         if (event.target.classList.contains('alert-popup')) {
-//             alertMsg.classList.toggle('active')
-//         }
-//         else{
-//             alertMsg.classList.remove('active')
-//         }
-        
-//     })
-// }
-// showAlert()
-
+// =============================== DROPDOWN POPUP ==============================//
 function removeDropdown() {
     var dropdown = document.querySelector('.profile-dropdown')
     dropdown.classList.toggle('active')
