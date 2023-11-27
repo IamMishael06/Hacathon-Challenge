@@ -477,7 +477,7 @@ summary::-webkit-details-marker {
 .step-1.active{
     max-height: 200px;
     background:#F3F3F3 ;
-    margin: 5px auto;
+    margin: 10px auto;
 }
 
 /* .step-1 .text p.active{

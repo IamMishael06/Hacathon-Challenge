@@ -15,18 +15,24 @@ function Focus(e) {
 }
 
 // ================================ STEPS DROPDOWN============================== //
-var step = document.querySelectorAll('.step-1')
-step.forEach(steps => {
-    steps.addEventListener('click', function(e) {
-        console.log(steps)
-        let imgTag = steps.querySelector('.step-img');
-        var event = e.target
-        // let text = document.querySelector('.step-1 .text');
-        // let pTag = document.querySelector('.step-1 .text p');
-        // let buttonTag = document.querySelector(' .step-1 .text button');
+var steps = document.querySelectorAll('.step-1')
+steps.forEach(step => {
+    step.addEventListener('click', function(e) {
+        let imgTag = step.querySelector('.step-img');
+        var event = e.target;
+
+        // Close all other active step-1 divs
+        steps.forEach(otherStep => {
+            if (otherStep !== step && otherStep.classList.contains('active')) {
+                otherStep.classList.remove('active');
+                otherStep.querySelector('.step-img').classList.remove('active');
+            }
+        });
+
+        // Toggle the clicked step-1 div
         if (!event.classList.contains('check-box') && !event.closest('.check-box')) {
-                steps.classList.toggle('active');
-                imgTag.classList.toggle('active');
+            step.classList.toggle('active');
+            imgTag.classList.toggle('active');
         }
     });
 });
