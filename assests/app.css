@@ -427,7 +427,7 @@ summary::-webkit-details-marker {
     word-wrap: break-word; 
 }
 .progress-bar{
-    width: 100px;
+    width: 125px;
     height: 4px;
     border-radius: 28px;
     background:#E3E3E3 ;

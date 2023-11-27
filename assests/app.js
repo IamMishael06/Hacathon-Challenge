@@ -38,52 +38,48 @@ steps.forEach(step => {
 });
 
 // =============================== CHECKED ANIMATION ==============================//
-var counter = document.querySelector('.counter')
-var checkBox = document.querySelectorAll('.check-box')
-
+var counter = document.querySelector('.counter');
+var checkBoxes = document.querySelectorAll('.check-box');
 var number = 0;
-counter.textContent = number
-var hasBeenClicked = false;
-checkBox.forEach( (checkBoxes, index) => {
 
-    checkBoxes.addEventListener("click", (event)=>{
-        var checked = checkBoxes.querySelector('.checked')
-        var rollingAnimation = checkBoxes.querySelector('.rolling-animation')
-        var checkBoxIcon = checkBoxes.querySelector('.checkbox')
-        console.log(checkBoxes)
-        var bar = document.querySelector('.progress-bar')
+counter.textContent = number;
 
-        counter.textContent = number
-        bar.style.setProperty('--width', '25px');
-        if (!hasBeenClicked) {
+checkBoxes.forEach((checkBox, index) => {
+    var hasBeenClicked = false;
+    var checked = checkBox.querySelector('.checked');
+    var rollingAnimation = checkBox.querySelector('.rolling-animation');
+    var checkBoxIcon = checkBox.querySelector('.checkbox');
+
+    checkBox.addEventListener("click", (event) => {
+        var bar = document.querySelector('.progress-bar');
+
+        // Check if the checkbox has been clicked before
+        if (hasBeenClicked) {
+            // Decrease the counter and remove the 'active' class
+            number = Math.max(0, number - 1);
+            rollingAnimation.classList.remove('active');
+            checked.classList.remove('active')
+            checkBoxIcon.classList.remove('active')
+        } else {
+            // Increase the counter and add the 'active' class
             if (number < 5) {
-                number = number + 1
-                checkBoxIcon.classList.add('active')
+                number = number + 1;
+                rollingAnimation.classList.add('active');
                 checked.classList.add('active')
-                rollingAnimation.classList.add('active')
+                checkBoxIcon.classList.add('active');
             }
-            counter.textContent = number
-            // hasBeenClicked = true;
-        } else{
-            if (number < 5) {
-                number = number - 1
-            }
-                rollingAnimation.classList.toggle('active')
-                checkBoxIcon.classList.remove('active')
-                checked.classList.remove('active')
-
-            counter.textContent = number
-            bar.style.setProperty('--width', '0px');
-            
-            // hasBeenClicked = true;
         }
-        
-        hasBeenClicked = !hasBeenClicked
 
-    })
-    
+        // Update the counter
+        counter.textContent = number;
+
+        // Reset hasBeenClicked for the next click
+        hasBeenClicked = !hasBeenClicked;
+
+        // Update the progress bar
+        bar.style.setProperty('--width', number * 25 + 'px');
+    });
 });
-
 // =============================== ALERT POPUP ==============================//
 function showAlert() {
     var alertMsg = document.querySelector('.alert-popup')
